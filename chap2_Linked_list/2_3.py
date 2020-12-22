@@ -39,28 +39,15 @@ class SinglyLinkedList(object):
             node_ = node_.next_node
         print(str_)
     
-    def remove_duplicates(self):
+    def get_k_th_node(self, k):
         node_ = self.head
-        node_previous = None
-        unique_values = set()
-        while(node_ != None):
-            if node_.data in unique_values:
-                node_previous.next_node = node_.next_node
-            unique_values.add(node_.data)
-            node_previous = node_
+        for i in range(k):
             node_ = node_.next_node
-        
-    def remove_duplicates_without_buffer(self):
-        node_1 = self.head
-        while(node_1 != None):
-            node_previous = node_1
-            node_2 = node_1.next_node
-            while(node_2 != None):
-                if node_2.data == node_1.data:
-                    node_previous.next_node = node_2.next_node
-                node_previous = node_2
-                node_2 = node_2.next_node
-            node_1 = node_1.next_node
+        return node_
+    
+    def delete_node_onlyAccessToNode(self, node_):
+        node_.data = (node_.next_node).data
+        node_.next_node = (node_.next_node).next_node
         
 def main():
     list1 = SinglyLinkedList()
@@ -73,21 +60,9 @@ def main():
     list1.insert_tail(4)
     list1.insert_tail(2)
     list1.print_list()
-    list1.remove_duplicates()
+    node_ = list1.get_k_th_node(k=2)
+    list1.delete_node_onlyAccessToNode(node_=node_)
     list1.print_list()
-    
-    list2 = SinglyLinkedList()
-    list2.insert_top(1)
-    list2.insert_tail(2)
-    list2.insert_tail(2)
-    list2.insert_tail(3)
-    list2.insert_tail(2)
-    list2.insert_tail(4)
-    list2.insert_tail(4)
-    list2.insert_tail(2)
-    list2.print_list()
-    list2.remove_duplicates_without_buffer()
-    list2.print_list()
 
 if __name__ == '__main__':
     main()
