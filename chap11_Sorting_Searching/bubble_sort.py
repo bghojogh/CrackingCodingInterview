@@ -9,10 +9,17 @@ def bubble_sort(array):
     for run in range(len(array)):
         for index in range(len(array)-1):
             if array[index] > array[index+1]:
-                temp = array[index]
-                array[index] = array[index+1]
-                array[index+1] = temp
+                array[index], array[index+1] = array[index+1], array[index]
     return array
-            
+
+# def bubble_sort(array):
+#     for run in range(len(array)):
+#         for index in range(len(array)-1):
+#             if array[index] > array[index+1]:
+#                 temp = array[index]
+#                 array[index] = array[index+1]
+#                 array[index+1] = temp
+#     return array
+           
 if __name__ == '__main__':
     main()
