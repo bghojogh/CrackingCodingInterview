@@ -1,0 +1,19 @@
+1- why should weights of neural net be initialized differently (not the same)?
+I googled: what happens if all weights of network initializes same
+https://stackoverflow.com/questions/20027598/why-should-weights-of-neural-networks-be-initialized-to-random-numbers#:~:text=E.g.%20if%20all%20weights%20are,will%20be%20the%20same%20too.
+https://stackoverflow.com/questions/20027598/why-should-weights-of-neural-networks-be-initialized-to-random-numbers
+
+2- What do LSTM cells do?
+
+3- If we have some text data, what are the steps from begining to end to process data? Assume we have labels?
+- removing unnecessary words
+- embedding text words or sentences using BERT
+- outlier removal
+- feature extraction using supervised dimensionality reduction for better separation of classes
+- classification using a classifier
+- If big data: neural network classification + early stopping
+- If not big data: cross validation and a simple classifier
+
+4- Why F-score and recall rather than accuracy?
+- Becuase accuracy does not care much about the imbalanced classes
+
